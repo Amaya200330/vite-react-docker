@@ -38,3 +38,19 @@ El proyecto fue versionado utilizando Git y publicado en GitHub.
 ### Próximo paso
 - Ejecutar el proyecto dentro de un contenedor Docker
 - Mejorar el Dockerfile (build de producción)
+
+
+---
+
+## Uso de Docker
+
+Este proyecto fue ejecutado por primera vez usando Docker Desktop en Windows 11.
+
+### Docker en desarrollo
+Se utilizó un contenedor basado en Node.js para ejecutar la aplicación en modo desarrollo.
+
+Comandos utilizados:
+
+```bash
+docker build -t vite-react-dev .
+docker run -p 5173:5173 vite-react-dev
