@@ -54,3 +54,23 @@ Comandos utilizados:
 ```bash
 docker build -t vite-react-dev .
 docker run -p 5173:5173 vite-react-dev
+
+---
+
+## Docker Compose y Hot Reload en Windows
+
+Durante el desarrollo con Docker Compose en Windows 11 fue necesario
+configurar Vite para usar polling, ya que los eventos de cambio de archivos
+no siempre se detectan correctamente con volúmenes.
+
+### Configuración aplicada
+
+En `vite.config.js`:
+
+```js
+server: {
+  watch: {
+    usePolling: true,
+    interval: 300
+  }
+}
