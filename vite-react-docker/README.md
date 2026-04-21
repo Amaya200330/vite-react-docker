@@ -74,3 +74,20 @@ server: {
     interval: 300
   }
 }
+
+
+---
+
+## Despliegue de producción con Docker
+
+La aplicación cuenta con un flujo completo de construcción y despliegue
+usando Docker y Docker Compose.
+
+### Publicación de imagen
+La imagen de producción fue construida usando un Dockerfile multi-stage
+y publicada en Docker Hub.
+
+```bash
+docker build -f Dockerfile.prod -t vite-react-prod .
+docker tag vite-react-prod usuario/vite-react-app:1.0.0
+docker push usuario/vite-react-app:1.0.0
