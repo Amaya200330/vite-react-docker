@@ -2,8 +2,10 @@ version: "3.9"
 
 services:
   frontend:
-    image: amaya200330/vite-react-app:1.0.0
-    container_name: vite-react-prod
+    image: usuario/vite-react-app:1.0.0
+    container_name: frontend-prod
     restart: always
     ports:
       - "80:80"
+    env_file:
+      - .env.production
